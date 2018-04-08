@@ -7,7 +7,6 @@ class PrintBanner(private val string: String) : Banner(string), Print {
     override fun printStrong() {
         showWithAster()
     }
-
     fun show() {
         println(string)
     }

@@ -2,10 +2,6 @@ package adapter
 
 import java.io.*
 
-class Main {
-
-}
-
 fun main(args: Array<String>) {
     val p: Print = PrintBanner("Hello")
     p.printWeak()
@@ -16,7 +12,7 @@ fun main(args: Array<String>) {
     p2.printStrong()
 
     // 問題2-2
-    var f: FileIO = FileProperties()
+    val f: FileIO = FileProperties()
     try {
         f.readFromFile("././file.txt")
         f.setValue("year", "2004")
