@@ -1,0 +1,37 @@
+@startuml
+title Builderパターンのシーケンス図
+hide footbox
+
+participant "<u>:Client</u>" as client
+participant "<u>:Director</u>" as director
+participant "<u>:ConcreteBuilder</u>" as concreteBuilder
+
+create concreteBuilder
+client -> concreteBuilder: new
+
+client -> director: construct
+activate director
+director -> concreteBuilder: buildPart1
+activate concreteBuilder
+director <-- concreteBuilder
+deactivate concreteBuilder
+
+director -> concreteBuilder: buildPart2
+activate concreteBuilder
+director <-- concreteBuilder
+deactivate concreteBuilder
+
+director -> concreteBuilder: buildPart3
+activate concreteBuilder
+director <-- concreteBuilder
+deactivate concreteBuilder
+
+client <-- director
+deactivate director
+
+client -> concreteBuilder: getResult
+activate concreteBuilder
+client <-- concreteBuilder
+deactivate concreteBuilder
+
+@enduml

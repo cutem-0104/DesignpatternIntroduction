@@ -1,0 +1,23 @@
+@startuml(delegation-adapter-pattern.png)
+
+class Client
+class Adapter {
+    adaptee
+    targetMethod1()
+    targetMethod2()
+}
+class Adaptee {
+    methodA()
+    methodB()
+    methodC()
+}
+interface Target {
+    tartgetMethod1()
+    tartgetMethod2()
+}
+
+Client -d-> Target: Uses
+Target <.l. Adapter: extends
+Adapter o-r- Adaptee: has
+
+@enduml

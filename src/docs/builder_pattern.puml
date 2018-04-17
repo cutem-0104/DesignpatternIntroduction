@@ -1,0 +1,27 @@
+@startuml
+
+class Client
+class Director {
+    builder
+    construct()
+}
+class Builder {
+    {abstract}buildPart1()
+    {abstract}buildPart2()
+    {abstract}buildPart3()
+}
+class ConcreteBuilder {
+    buildPart1()
+    buildPart2()
+    buildPart3()
+    getResult()
+}
+
+Client -r-> Director: Uses
+Client --> ConcreteBuilder: Uses
+Director o-r-> Builder
+ConcreteBuilder -u-|> Builder
+
+
+
+@enduml

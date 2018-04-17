@@ -1,0 +1,42 @@
+@startuml(template_pattern_sample.png)
+
+abstract class AbstractDisplay {
+    +{abstract} open()
+    +{abstract} print()
+    +{abstract} close()
+    +display()
+}
+class CharDisplay {
+    -ch
+    +open()
+    +print()
+    +close()
+}
+class StringDisplay {
+    -string
+    -width
+    +open()
+    +print()
+    +close()
+    -printLine()
+}
+
+CharDisplay -u-|> AbstractDisplay: 汎化
+StringDisplay -u-|> AbstractDisplay: 汎化
+
+abstract class AbstractClass {
+    +{abstract} method1()
+    +{abstract} method2()
+    +{abstract} method3()
+    +templateMethod()
+}
+note left:
+
+class ConcreteClass {
+    method1()
+    method2()
+    method3()
+}
+
+ConcreteClass -u-|> AbstractClass: 汎化
+@enduml
