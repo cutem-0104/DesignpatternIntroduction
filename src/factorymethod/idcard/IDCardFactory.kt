@@ -2,7 +2,6 @@ package factorymethod.idcard
 
 import factorymethod.factory.Factory
 import factorymethod.factory.Product
-import kotlin.concurrent.withLock
 
 class IDCardFactory(): Factory() {
     private val owners: MutableList<String> = mutableListOf()

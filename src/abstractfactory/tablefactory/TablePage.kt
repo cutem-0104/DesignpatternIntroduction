@@ -9,7 +9,7 @@ class TablePage(title: String, author: String): Page(title = title, author = aut
         buffer.append("<body>\n")
         buffer.append("<h1>$title</h1>")
         buffer.append("<table width=\"80%\" border=\"3\">\n")
-        var it = content.iterator()
+        val it = content.iterator()
         while (it.hasNext()) {
             val item = it.next()
             buffer.append("<tr>${item.makeHTML()}</tr>")

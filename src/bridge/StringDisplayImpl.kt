@@ -14,7 +14,7 @@ class StringDisplayImpl(private val string: String): DisplayImpl() {
         printLine()
     }
 
-    fun printLine() {
+    private fun printLine() {
         print("+")
         for (i in 0 until width) {
             print("-")

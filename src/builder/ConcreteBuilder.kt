@@ -40,7 +40,7 @@ class ConcreteBuilder: Builder(), ActionListener {
         println(e.actionCommand)
     }
 
-    fun getResult(): JFrame {
+    private fun getResult(): JFrame {
         return frame
     }
 }
