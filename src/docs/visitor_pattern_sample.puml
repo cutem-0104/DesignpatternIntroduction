@@ -1,0 +1,54 @@
+@startuml
+
+abstract class Visitor {
+    {abstract}visit(File)
+    {abstract}visit(Directory)
+}
+
+class ListVisitor {
+    currentDir
+    visit(File)
+    visit(Directory)
+}
+
+interface Element <<interface>> {
+    accept()
+}
+
+abstract class Entry {
+    {abstract}getName()
+    {abstract}getSize()
+    add()
+    iterator()
+}
+
+class File {
+    name
+    size
+    accept()
+    getName()
+    getSize()
+}
+
+class Directory {
+    name
+    dir
+    accept()
+    getName()
+    getSize()
+    add()
+    iterator()
+}
+
+class Main
+
+Main -u-> ListVisitor: Uses
+Main -u-> File: Uses
+Main -u-> Directory: Uses
+ListVisitor -u-|> Visitor
+File -u-|> Entry
+Directory -u-|> Entry
+Directory o--> Entry
+Entry .u.> Element
+
+@enduml
